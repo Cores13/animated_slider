@@ -170,6 +170,32 @@ header a {
     color: #555;
 }
 
+/* Hidden arrows */
+.hidden-arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.hidden-arrows button {
+    width: 200px;
+    height: 100%;
+    z-index: 110;
+    cursor: pointer;
+    opacity: 0;
+}
+
+/* .hidden-arrows button:hover {
+    background-color: #eee;
+    opacity: 0.1;
+} */
+
 /* Carousel animations */
 .carousel .list .item:nth-child(1) {
     z-index: 1;
@@ -294,6 +320,8 @@ header a {
     }
 }
 
+.carousel.next .hidden-arrows button,
+.carousel.prev .hidden-arrows button,
 .carousel.next .arrows button,
 .carousel.prev .arrows button {
     pointer-events: none;

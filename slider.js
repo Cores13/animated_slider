@@ -1,5 +1,7 @@
 let nextBtn = document.getElementById('next');
 let prevBtn = document.getElementById('prev');
+let nextBtnHidden = document.getElementById('nextBtn');
+let prevBtnHidden = document.getElementById('prevBtn');
 let carousel = document.querySelector('.carousel');
 let listItem = document.querySelector('.carousel .list');
 let thumbnail = document.querySelector('.carousel .thumbnail');
@@ -13,6 +15,14 @@ nextBtn.onclick = () => {
 }
 
 prevBtn.onclick = () => {
+    showSlider('prev');
+}
+
+nextBtnHidden.onclick = () => {
+    showSlider('next');
+}
+
+prevBtnHidden.onclick = () => {
     showSlider('prev');
 }
 
