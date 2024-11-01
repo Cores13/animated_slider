@@ -1,0 +1,1 @@
+Animated slider in HTML, CSS and JavaScript
