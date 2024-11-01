@@ -4,8 +4,9 @@ let carousel = document.querySelector('.carousel');
 let listItem = document.querySelector('.carousel .list');
 let thumbnail = document.querySelector('.carousel .thumbnail');
 let animationTime = 800;
-let timeAutoNext = 7000;
 let runTimeOut;
+let timeAutoNext = 7000;
+let autoRun;
 
 nextBtn.onclick = () => {
     showSlider('next');
@@ -14,6 +15,10 @@ nextBtn.onclick = () => {
 prevBtn.onclick = () => {
     showSlider('prev');
 }
+
+autoRun = setTimeout(() => {
+    nextBtn.click();
+}, timeAutoNext);
 
 const showSlider = (type) => {
     let itemList = document.querySelectorAll('.carousel .list .item');
@@ -34,4 +39,9 @@ const showSlider = (type) => {
     runTimeOut = setTimeout(() => {
         carousel.classList.remove(type);
     }, animationTime);
+
+    clearTimeout(autoRun);
+    autoRun = setTimeout(() => {
+        nextBtn.click();
+    }, timeAutoNext);
 }
